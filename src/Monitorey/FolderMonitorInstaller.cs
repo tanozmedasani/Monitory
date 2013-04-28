@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
+using System.Configuration;
 using System.Configuration.Install;
+using System.Reflection;
 
 namespace monitory
 {
@@ -9,9 +11,17 @@ namespace monitory
         System.ServiceProcess.ServiceProcessInstaller _serviceProcessInstaller1;
         System.ServiceProcess.ServiceInstaller _serviceInstaller1;
         readonly Container _components = null;
+        private readonly Configuration _config;
+        private readonly string _serviceName;
+        private readonly string _serviceDescription;
+
 
         public FolderMonitorInstaller()
         {
+            Assembly service = Assembly.GetAssembly(typeof(MonitoryService));
+            _config = ConfigurationManager.OpenExeConfiguration(service.Location);
+            _serviceName = (_config.AppSettings.Settings["ServiceName"]).Value;
+            _serviceDescription = (_config.AppSettings.Settings["ServiceDescription"]).Value;
             InitializeComponent();
         }
 
@@ -41,9 +51,9 @@ namespace monitory
             // 
             // _serviceInstaller1
             // 
-            _serviceInstaller1.Description = "Watches folders for certain files or old files";
-            _serviceInstaller1.DisplayName = "monitory - FolderMonitoringService";
-            _serviceInstaller1.ServiceName = "monitory - FolderMonitoringService";
+            _serviceInstaller1.Description = _serviceDescription;
+            _serviceInstaller1.DisplayName = _serviceName;
+            _serviceInstaller1.ServiceName = _serviceName;
             // 
             // ProjectInstaller
             // 
