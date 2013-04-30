@@ -4,6 +4,7 @@ namespace monitory.Infrastructure.Interfaces
 {
     public interface IApplicationSettings
     {
+        bool ShouldLoadJobsFromConfig { get; }
         int HourToStartMonitoring { get; }
         int HourToStopMonitoring { get; }
         int RetryIntervalInSeconds { get; }

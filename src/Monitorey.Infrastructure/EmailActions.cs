@@ -15,7 +15,7 @@ namespace monitory.Infrastructure
 
         public void SendAlert(string message)
         {
-            Log.Debug("Stepped into SendAlert");
+            Log.ErrorFormat("We Recieved the error meaages '{0}'", message);
            //build and send email or whatever alert here
         }
     }

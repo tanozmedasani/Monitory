@@ -19,6 +19,7 @@ namespace monitory.Infrastructure
 
         public string ConnectionString { get; private set; }
         public int MinutesBetweenCheckingForNewMonitorJobs { get; private set; }
+        public bool ShouldLoadJobsFromConfig { get; private set; }
         public int HourToStartMonitoring { get; private set; }
         public int HourToStopMonitoring { get; private set; }
         public int RetryIntervalInSeconds { get; private set; }
@@ -30,6 +31,7 @@ namespace monitory.Infrastructure
         {
             try
             {
+                ShouldLoadJobsFromConfig = bool.Parse(ConfigurationManager.AppSettings["ShouldLoadJobsFromConfig"]);
                 ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 MinutesBetweenCheckingForNewMonitorJobs = Convert.ToInt32(ConfigurationManager.AppSettings["MinutesBetweenCheckingForNewMonitorJobs"]);
                 HourToStartMonitoring = Convert.ToInt32(ConfigurationManager.AppSettings["HourToStartMonitoring"]);
