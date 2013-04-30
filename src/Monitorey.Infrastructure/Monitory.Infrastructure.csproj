@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\IMonitorJobActions.cs" />
     <Compile Include="Interfaces\IMonitorFactory.cs" />
     <Compile Include="Interfaces\ITimeActions.cs" />
+    <Compile Include="LimitedSmtpCachingAppender.cs" />
     <Compile Include="MonitorClasses\BadFilesFolderMonitorer.cs" />
     <Compile Include="Interfaces\IApplicationSettings.cs" />
     <Compile Include="Interfaces\IDataActions.cs" />
