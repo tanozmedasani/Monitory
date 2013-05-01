@@ -8,14 +8,11 @@
 //WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //See the License for the specific language governing permissions and
 //limitations under the License.
-
-namespace monitory.BusinessObjects
+namespace monitory.Interfaces
 {
-    public enum MontiredJobType
+    public interface IThreadWrangler
     {
-        BadFileDirectory = 1,
-        StaleDirectory,
-        FileSmallerThanThreshold,
-        StaleFileMonitor
+        void Start();
+        void Stop();
     }
 }

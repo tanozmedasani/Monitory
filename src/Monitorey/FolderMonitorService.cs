@@ -1,4 +1,14 @@
-﻿using System;
+﻿//Copyright [2012] [Jim Sowers]
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
+//    http://www.apache.org/licenses/LICENSE-2.0
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License.
+using System;
 using System.ServiceProcess;
 using monitory.Infrastructure;
 using monitory.Infrastructure.Interfaces;
@@ -12,7 +22,7 @@ namespace monitory
     {
         static readonly ILog Log = LogManager.GetLogger(typeof(MonitoryService));
         System.ComponentModel.Container _components;
-        IProcessThread _thread;
+        IThreadWrangler _thread;
         IDataActions _dataActions;
         IApplicationSettings _applicationSettings;
         IMonitorFactory _monitorFactory;
@@ -67,7 +77,7 @@ namespace monitory
 
         protected override void OnStart(string[] args)
         {
-            _thread = new ProcessThread(_dataActions, _applicationSettings, _monitorFactory, _monitorJobActions);
+            _thread = new ThreadWrangler(_dataActions, _applicationSettings, _monitorFactory, _monitorJobActions);
             _thread.Start();
             Log.WarnFormat("The monitory successfully started");
         }

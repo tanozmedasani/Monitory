@@ -63,8 +63,8 @@
     <Compile Include="FolderMonitorService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Interfaces\IProcessThread.cs" />
-    <Compile Include="ProcessThread.cs" />
+    <Compile Include="Interfaces\IThreadWrangler.cs" />
+    <Compile Include="ThreadWrangler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
