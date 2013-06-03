@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8E15AD3-39E8-4592-B3DA-B7C7C075B424}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monitory.Infrastructure</RootNamespace>
+    <AssemblyName>Monitory.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\log4net\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="DataActions.cs" />
+    <Compile Include="EmailActions.cs" />
+    <Compile Include="Interfaces\IMonitorJobActions.cs" />
+    <Compile Include="Interfaces\IMonitorFactory.cs" />
+    <Compile Include="Interfaces\ITimeActions.cs" />
+    <Compile Include="LimitedSmtpCachingAppender.cs" />
+    <Compile Include="MonitorClasses\BadFilesFolderMonitorer.cs" />
+    <Compile Include="Interfaces\IApplicationSettings.cs" />
+    <Compile Include="Interfaces\IDataActions.cs" />
+    <Compile Include="Interfaces\IEmailActions.cs" />
+    <Compile Include="Interfaces\IMonitorer.cs" />
+    <Compile Include="MonitorClasses\FileSmallerThanThresholdMonitorer.cs" />
+    <Compile Include="CustomExceptions\InvalidThresholdTypeException.cs" />
+    <Compile Include="MonitorFactory.cs" />
+    <Compile Include="MonitorJobActions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MonitorClasses\StaleDirectoryMonitorer.cs" />
+    <Compile Include="MonitorClasses\StaleFileMonitorer.cs" />
+    <Compile Include="CustomExceptions\UnknownMonitorJobTypeException.cs" />
+    <Compile Include="TimeActions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sql\creates\MonitorJobs.sql" />
+    <Content Include="sql\creates\MonitorJobThresholdTypes.sql" />
+    <Content Include="sql\creates\MonitorJobTypes.sql" />
+    <Content Include="sql\inserts\MonitorJobTypes.sql" />
+    <Content Include="sql\inserts\ThresholdTypes.sql" />
+    <Content Include="sql\procs\usp_FolderMonitor_GetJobsByServerName.sql" />
+    <Content Include="ThirdParty\log4net\2.0\log4net.dll" />
+    <Content Include="ThirdParty\log4net\2.0\log4net.xml" />
+    <Content Include="ThirdParty\NUnit\nunit.framework.dll" />
+    <Content Include="ThirdParty\NUnit\nunit.framework.xml" />
+    <Content Include="ThirdParty\NUnit\nunit.mocks.dll" />
+    <Content Include="ThirdParty\NUnit\pnunit.framework.dll" />
+    <Content Include="ThirdParty\RhinoMocks\V3.6Build21\license.txt" />
+    <Content Include="ThirdParty\RhinoMocks\V3.6Build21\Rhino.Mocks.dll" />
+    <Content Include="ThirdParty\RhinoMocks\V3.6Build21\Rhino.Mocks.xml" />
+    <Content Include="ThirdParty\StructureMap\StructureMap.dll" />
+    <Content Include="ThirdParty\StructureMap\StructureMap.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Monitorey.BusinessObjects\Monitory.BusinessObjects.csproj">
+      <Project>{36E49C21-3235-4A8D-B3DC-86CB4F5420E8}</Project>
+      <Name>Monitory.BusinessObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
