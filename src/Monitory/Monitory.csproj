@@ -68,11 +68,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Monitorey.BusinessObjects\Monitory.BusinessObjects.csproj">
+    <ProjectReference Include="..\Monitory.BusinessObjects\Monitory.BusinessObjects.csproj">
       <Project>{36E49C21-3235-4A8D-B3DC-86CB4F5420E8}</Project>
       <Name>Monitory.BusinessObjects</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Monitorey.Infrastructure\Monitory.Infrastructure.csproj">
+    <ProjectReference Include="..\Monitory.Infrastructure\Monitory.Infrastructure.csproj">
       <Project>{c8e15ad3-39e8-4592-b3da-b7c7c075b424}</Project>
       <Name>Monitory.Infrastructure</Name>
     </ProjectReference>
