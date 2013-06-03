@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory", "Monitorey\Monitory.csproj", "{5CBE16EB-7CDA-4207-8C15-76C80EFFFBB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory", "Monitory\Monitory.csproj", "{5CBE16EB-7CDA-4207-8C15-76C80EFFFBB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.BusinessObjects", "Monitorey.BusinessObjects\Monitory.BusinessObjects.csproj", "{36E49C21-3235-4A8D-B3DC-86CB4F5420E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.BusinessObjects", "Monitory.BusinessObjects\Monitory.BusinessObjects.csproj", "{36E49C21-3235-4A8D-B3DC-86CB4F5420E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.Infrastructure", "Monitorey.Infrastructure\Monitory.Infrastructure.csproj", "{C8E15AD3-39E8-4592-B3DA-B7C7C075B424}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.Infrastructure", "Monitory.Infrastructure\Monitory.Infrastructure.csproj", "{C8E15AD3-39E8-4592-B3DA-B7C7C075B424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.Integration.Tests", "Monitorey.Integration.Tests\Monitory.Integration.Tests.csproj", "{DB72800D-004E-4734-97A6-F51E9349FA09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.Integration.Tests", "Monitory.Integration.Tests\Monitory.Integration.Tests.csproj", "{DB72800D-004E-4734-97A6-F51E9349FA09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.Tests", "Monitorey.Tests\Monitory.Tests.csproj", "{128FA7FA-E430-4940-A526-6040299DB94E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitory.Tests", "Monitory.Tests\Monitory.Tests.csproj", "{128FA7FA-E430-4940-A526-6040299DB94E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
