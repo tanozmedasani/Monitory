@@ -91,7 +91,7 @@
     <Content Include="ThirdParty\StructureMap\StructureMap.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Monitorey.BusinessObjects\Monitory.BusinessObjects.csproj">
+    <ProjectReference Include="..\Monitory.BusinessObjects\Monitory.BusinessObjects.csproj">
       <Project>{36E49C21-3235-4A8D-B3DC-86CB4F5420E8}</Project>
       <Name>Monitory.BusinessObjects</Name>
     </ProjectReference>
